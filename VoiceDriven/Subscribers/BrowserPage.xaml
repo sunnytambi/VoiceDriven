@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="VoiceDriven.Subscribers.BrowserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VoiceDriven.Subscribers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Vertical">
+            <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal" 
+                        HorizontalAlignment="Center" Name="Container">
+                <!--<Canvas HorizontalAlignment="Center" Height="40">-->
+                <TextBox Text="" Name="UrlBar" Width="200"
+                         FontSize="17" KeyDown="UrlBar_KeyDown" BorderThickness="1" Margin="0"></TextBox>
+                <!--<ProgressRing Name="Progress" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible"></ProgressRing>
+                </Canvas>-->
+                <Button Content="GOOGLE" Name="GoBtn" Click="GoBtn_Click" Height="40"></Button>
+                <StackPanel>
+                    <Image x:Name="image" Height="36" Width="35" Source="../Assets/voicesearch.png"/>
+                    <TextBlock Text="Listening..." FontSize="12" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Name="StkCont" HorizontalAlignment="Stretch" Height="600" BorderBrush="Blue" BorderThickness="0 2 0 0">
+                <WebView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="wv"
+                         NavigationStarting="wv_ContentLoading" MinHeight="400"
+                         DOMContentLoaded="wv_DOMContentLoaded"></WebView>
+            </StackPanel>
+        </StackPanel>
+
+        <Canvas>
+            <TextBlock Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Red" Name="LoadingTxt" Visibility="Collapsed"></TextBlock>
+        </Canvas>
+    </Grid>
+</Page>
