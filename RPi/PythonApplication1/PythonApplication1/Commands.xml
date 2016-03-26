@@ -1,0 +1,10 @@
+<root>
+  <command>
+    <key>youtube</key>
+    <program>https://www.youtube.com/results?search_query={0}</program>
+  </command>
+  <command>
+    <key>google</key>
+    <program>https://www.google.com/?q={0}</program>
+  </command>
+</root>

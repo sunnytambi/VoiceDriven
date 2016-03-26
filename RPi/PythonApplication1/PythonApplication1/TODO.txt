@@ -1,0 +1,8 @@
+Fix USB audio problem with RPi
+Install required dependencies
+Record audio using 'arecord'
+Take audio to google api to translate to text
+Take text and parse commands
+Do action for commands
+	google -> Google Search
+	youtube -> Youtube search
